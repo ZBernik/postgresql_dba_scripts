@@ -20,7 +20,7 @@ usage () {
 cat << EOF
 Usage: check_pg_log.sh [-t|-1|-2|-3|-4|-5|-6|-7|-h]
 
-pgerr - without parameter command lists errors from actual day
+check_pg_log.sh - without parameter command lists errors from actual day
 
 -t the whole week 1-7
 -1 monday
