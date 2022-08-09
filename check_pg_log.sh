@@ -9,7 +9,7 @@
 
 
 export PGDATA=/postgres/pgsql/project_name/data13
-PGLOG=$PGDATA/log/
+export PGLOG=$PGDATA/log/
 
 list () {
 egrep -w 'ERROR|PANIC|FATAL|crash|Killed|terminated|Failed|abnormally' $PGLOG$i
