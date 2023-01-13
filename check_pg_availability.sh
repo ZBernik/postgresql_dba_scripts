@@ -47,7 +47,7 @@ MAILLOG=/postgres/logs/mail_$$.log
 PGFILE=`ls -td $PG_DATA/log/* | head -1`
 echo "$DATE $CHECK_MSG" | tee -a $LOG $MAILLOG
 egrep -w 'ERROR|PANIC|FATAL|crash|Killed|terminated|Failed|abnormally|shut down' $PGFILE | egrep -v "pgwatch2" >> $MAILLOG
-cat $MAILLOG | mailx -s "$SERVERNAME $DATE -  DB $DBLIST is not avalable! " -S smtp=${SMTP_IP}:25 Postgres.Monitor@spcss.cz  $MAIL
+cat $MAILLOG | mailx -s "$SERVERNAME $DATE -  DB $DBLIST is not avalable! " -S smtp=${SMTP_IP}:25 Postgres.Monitor@mail.cz  $MAIL
 fi
 done
 }
