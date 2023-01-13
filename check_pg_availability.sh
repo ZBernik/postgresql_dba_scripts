@@ -28,7 +28,7 @@ pg_isready -t 20 -d $i >/dev/null 2>&1
 if [ $? = 0 ]; then
 echo "$DATE DB $i is available - OK" | tee -a $LOG
 else echo "$DATE DB $i is not avalable !!! - NOT OK" | tee -a $LOG
-echo "$DATE DB $i is not avalable !!!"  | mailx -s "$SERVERNAME $DATE - DB $i is not available!" -S smtp=${SMTP_IP}:25 -r Postgres.Monitor@spcss.cz  $MAIL
+echo "$DATE DB $i is not avalable !!!"  | mailx -s "$SERVERNAME $DATE - DB $i is not available!" -S smtp=${SMTP_IP}:25 -r Postgres.Monitor@mail.cz  $MAIL
 fi
 done
 }
