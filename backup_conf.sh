@@ -27,6 +27,7 @@ done
 ###########################################################################
 
 zip_bck () {
+cd $BCK_DIR
 tar -czvf $BCK_DIR/conf_$BCK_DATE.tar.gz $BCK_DIR/*.conf --remove-files
 }
 
