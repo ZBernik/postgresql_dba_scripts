@@ -1,7 +1,7 @@
 import psycopg2
 #########################################################################
 #                                                                       #
-# Connect to postgresql without password                                #
+# Connect to Postgresql via Python without password                     #
 # It looks easy, but almost no one knows it. Trick is password=""       #
 # Enjoy :-)                                                             #  
 #                                                                       #
