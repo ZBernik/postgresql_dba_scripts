@@ -38,7 +38,7 @@ checkcluster () {
 
 for PG_DATA in $PGDATA;
 do
-CHECK_REC=`LANG=C pg_controldata -D $PG_DATA | grep "Database cluster state" | grep "in production" | wc -l`
+CHECK_REC=`LANG=C pg_controldata -D $PG_DATA | egrep "Database cluster state|in production" | wc -l`
 CHECK_MSG=`LANG=C pg_controldata -D $PG_DATA | grep "Database cluster state"`
 if [ $CHECK_REC = 1 ]; then
 echo "$DATE $PG_DATA $CHECK_MSG" |  tee -a $LOG
