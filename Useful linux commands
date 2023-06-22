@@ -1,0 +1,2 @@
+# test via telnet with timeout 5sec
+echo quit | timeout --signal=9 5 telnet -c mailgw.spcss.cz 25;echo $?
