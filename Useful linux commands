@@ -1,2 +1,10 @@
 #  telnet test with timeout 5 sec
 echo quit | timeout --signal=9 5 telnet -c outlook.gate.cz 25;echo $?
+
+# CPU + RAM overview
+echo -n " CPU threads = ";  cat /proc/cpuinfo | grep processor | wc -l;uptime | cut -d ',' -f 4-6 | sed -e 's/^[ \t]*//';awk '$3=="kB"{$2=$2/1024**2;$3="GB";} 1' /proc/meminfo | column -t | grep MemTotal;echo -n "Memory usage % = "; vurp() { vmstat -s | { read a b ; read c d ; echo $((100*$c/$a)) ; } ; };vurp
+
+CPU threads:     16
+load average:    0,55, 0
+MemTotal:        14.9564 GB
+% Memory usage:  51
